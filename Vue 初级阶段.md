@@ -5,7 +5,7 @@
 - Vue 是一套用于构建用户界面的渐进式框架，Vue 被设计为可以自底向上逐层应用。
 - Vue 的数据驱动是通过 MVVM（Model-View-ViewModel）模式来实现的，其基本工作原理：
 
-![image-20200713162902918](img/image-20200713162902918.png)
+![image-20200713162902918](/img/image-20200713162902918.png)
 
 - Vue 提供了 ViewModel 的工作机制，相当于为视图与数据提供一个交互平台。
   - 视图引导数据： View 发生变化时，通过 DOM Listeners 来通知 Model 进行修改。
