@@ -396,7 +396,7 @@ const app = new Vue({
 >
 > > 因此为了可以便于开发管理，我们可以将组件编写进不同的 JS 文件当中。然后在主 JS 文件中导入，并在 Vue 实例注册组件后插入 template 当中。	
 > >
-> > ![image-20200730090810087](..\img\image-20200730090810087.png)
+> > ![image-20200730090810087](img/image-20200730090810087.png)
 
 ```javascript	
 # headmess.js

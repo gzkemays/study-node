@@ -155,7 +155,7 @@ User(id=5, name=Billie, age=24, email=test5@baomidou.com)
 mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 ```
 
-![image-20200620144050392](..\img\image-20200620144050392.png)
+![image-20200620144050392](img/image-20200620144050392.png)
 
 
 
@@ -178,7 +178,7 @@ public void testInsert(){
 
 **注意点：自带生成 id ，数据库插入的 id 值为全局的唯一 id**
 
-![image-20200620144550782](..\img\image-20200620144550782.png)
+![image-20200620144550782](img/image-20200620144550782.png)
 
 > > 数据库的主键：(uuid、自增 id 、雪花算法(分布式) ) [具体博客](https://www.cnblogs.com/haoxinyue/p/5208136.html)
 > >
@@ -244,7 +244,7 @@ public void testUpdate(){
 }
 ```
 
-![image-20200620151103351](..\img\image-20200620151103351.png)
+![image-20200620151103351](img/image-20200620151103351.png)
 
 **注意点：自动拼接动态 SQL，自动添加 where id = ?**
 
@@ -260,7 +260,7 @@ public void testUpdate(){
 
 1、在表中新增字段 create_time、update_time
 
-![image-20200620151806153](..\img\image-20200620151806153.png)
+![image-20200620151806153](img/image-20200620151806153.png)
 
 2、添加字段
 
@@ -280,13 +280,13 @@ public class User {
 
 3、再次插入数据后
 
-![image-20200620152025092](..\img\image-20200620152025092.png)
+![image-20200620152025092](img/image-20200620152025092.png)
 
 > 方式二：代码级别
 
 1、数据中没有默认设置
 
-![image-20200620152259478](..\img\image-20200620152259478.png)
+![image-20200620152259478](img/image-20200620152259478.png)
 
 2、实体类字段属性上需要增加注解
 
@@ -375,15 +375,15 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
  重新插入数据：
 
-  ![image-20200620154306788](..\img\image-20200620154306788.png)
+  ![image-20200620154306788](img/image-20200620154306788.png)
 
 更新数据：
 
-  ![image-20200620154402234](..\img\image-20200620154402234.png)
+  ![image-20200620154402234](img/image-20200620154402234.png)
 
  数据库结果：(一般在创建时间处的 TableField 的填充设置：INSERT_UPDATE) 此处为效果明显所以分开设置。
 
- ![image-20200620154458745](..\img\image-20200620154458745.png)
+ ![image-20200620154458745](img/image-20200620154458745.png)
 
  此处可见，即使在 Handler 声明在 InsertFill 执行时候添加 updateTime 的数据，但是如果 updateTime 并没有进行注解声明可以在 Insert 进行填充时，Handler 则无法在 InsertFill 过程中找到对应的属性（IOC）。
 
@@ -415,7 +415,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 1、数据库的改动：
 
-![image-20200620160512117](..\img\image-20200620160512117.png)
+![image-20200620160512117](img/image-20200620160512117.png)
 
 2、实体类添加字段
 
@@ -467,7 +467,7 @@ public void testLockedSucces(){
 }
 ```
 
-![image-20200620161933037](..\img\image-20200620161933037.png)
+![image-20200620161933037](img/image-20200620161933037.png)
 
 
 
@@ -491,11 +491,11 @@ public void testLockedSucces(){
 	}
 ```
 
-![image-20200620162344609](..\img\image-20200620162344609.png)
+![image-20200620162344609](img/image-20200620162344609.png)
 
 **从图片中很明显看得出，在模拟插队发生后，<font color='red'>A</font> 并没进行覆盖更新，而是跳出。（因为它们 select <font color='red'>查询到的 version 都是等于 2</font>，但是 <font color='red'>B</font> 却抢先执行更新。）**
 
-![image-20200620162627232](..\img\image-20200620162627232.png)
+![image-20200620162627232](img/image-20200620162627232.png)
 
 
 
@@ -519,11 +519,11 @@ public void testLockedSucces(){
 	}
 ```
 
-- ![image-20200620164409581](..\img\image-20200620164409581.png)
+- ![image-20200620164409581](img/image-20200620164409581.png)
 
-- ![image-20200620164434102](..\img\image-20200620164434102.png)
+- ![image-20200620164434102](img/image-20200620164434102.png)
 
-- ![image-20200620164521956](..\img\image-20200620164521956.png)
+- ![image-20200620164521956](img/image-20200620164521956.png)
 
 
 
@@ -596,7 +596,7 @@ public void testPage(){
 }
 ```
 
-![image-20200620165559815](..\img\image-20200620165559815.png)
+![image-20200620165559815](img/image-20200620165559815.png)
 
 
 
@@ -622,7 +622,7 @@ public void testDelete(){
 
 1、在数据库中添加一个属性（Boolean 布尔属性）
 
-![image-20200620171044954](..\img\image-20200620171044954.png)
+![image-20200620171044954](img/image-20200620171044954.png)
 
 1.1、或使用 Hibernate 自动生成
 
@@ -696,11 +696,11 @@ public void logicDelete(){
 }
 ```
 
-![image-20200620173201714](..\img\image-20200620173201714.png)
+![image-20200620173201714](img/image-20200620173201714.png)
 
 > 当配置了逻辑删除时，虽然指定的是 delete 操作，但是实际上执行的 update 操作。
 
-![image-20200620174320148](..\img\image-20200620174320148.png)
+![image-20200620174320148](img/image-20200620174320148.png)
 
 > 在配置 TableLogic 后它查询条件会自带逻辑属性。
 
@@ -767,7 +767,7 @@ public PerformanceInterceptor performanceInterceptor() {
 
 3、测试（查询所有结果）
 
-![image-20200620175433506](..\img\image-20200620175433506.png)
+![image-20200620175433506](img/image-20200620175433506.png)
 
 **运行报错：运行时间 34ms 而程序实际只允许 1ms 所以会报错**
 
@@ -775,9 +775,9 @@ public PerformanceInterceptor performanceInterceptor() {
 
 用于处理复杂的 sql 条件。
 
-![image-20200620180320685](..\img\image-20200620180320685.png)
+![image-20200620180320685](img/image-20200620180320685.png)
 
-![image-20200620180311745](..\img\image-20200620180311745.png)
+![image-20200620180311745](img/image-20200620180311745.png)
 
 
 
@@ -796,7 +796,7 @@ userMapper.selectList(wrapper).forEach(System.out::println);
 
 > 利用 QueryWrapper<po> wrapper 添加封装好的条件。
 
-![image-20200620181136133](..\img\image-20200620181136133.png)
+![image-20200620181136133](img/image-20200620181136133.png)
 
 #### 单数据条件查询（例：使用单条件）
 
@@ -810,7 +810,7 @@ void testWrapperOne(){
 }
 ```
 
-![image-20200620181753747](..\img\image-20200620181753747.png)
+![image-20200620181753747](img/image-20200620181753747.png)
 
 #### 数目条件查询（ 例：使用区间条件）
 
@@ -824,7 +824,7 @@ void testWrapperCount(){
 }
 ```
 
-![image-20200620182702005](..\img\image-20200620182702005.png)
+![image-20200620182702005](img/image-20200620182702005.png)
 
 
 
@@ -841,9 +841,9 @@ void testWrapperMap(){
 }
 ```
 
-![image-20200620183312669](..\img\image-20200620183312669.png)
+![image-20200620183312669](img/image-20200620183312669.png)
 
-![image-20200620183331976](..\img\image-20200620183331976.png)
+![image-20200620183331976](img/image-20200620183331976.png)
 
 > wrapper 中还自带 likeRight 和 likeLeft 分别表示 ?% 和 %? ， 其意义表示为：以某个字符开头、以某个字符结尾。
 
@@ -870,7 +870,7 @@ WHERE is_used=1
 AND id IN (select id from user where id < 3) 
 ```
 
-![image-20200620184200994](..\img\image-20200620184200994.png)
+![image-20200620184200994](img/image-20200620184200994.png)
 
 #### 排序查询--orderByAsc/Desc
 
@@ -892,7 +892,7 @@ WHERE is_used=1
 ORDER BY id DESC 
 ```
 
-![image-20200620184819619](..\img\image-20200620184819619.png)
+![image-20200620184819619](img/image-20200620184819619.png)
 
 ### 代码自动生成器
 
